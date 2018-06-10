@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="margin-top: 10%">
+   <div class="panel panel-primary">
+     <div class="panel-heading">
+		 
+		<input type = "text" id="search" class="form-control" name = "search" style="width:30%;" placeholder="Search By Author,Title,ISBN,Genre">
+		 <button  class="btn btn-danger"  id="searchbtn">Search</button>
+	 </div>
+      <div class="panel-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author </th>
+                <th>Link</th>
+				<th>Image Link</th>
+				<th>Genre</th>
+				<th>ISBN</th>
+				<th>IS COVER AVAILABLE</th>
+              </tr>
+            </thead>
+            <tbody id="populate_table">
+              
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+var str_table='';
+var token_value=localStorage.getItem("token");
+
+
+$.ajax({
+		url:"http://localhost:3000/api/books/findAllBooks",
+		type:'GET',
+		headers:{
+				"x-access-token":token_value
+			},
+		success:function(data, status){
+				//alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+
+				for(var i=0 ;i < data.length ; i++){
+
+				  str_table+="<tr>";
+				  str_table+="<td>"+data[i].title+"</td>";
+				  str_table+="<td>"+data[i].author+"</td>";
+				  str_table+="<td>"+data[i].link+"</td>";
+				  str_table+="<td>"+data[i].imageLink+"</td>";
+				  str_table+="<td>"+data[i].genre+"</td>";
+				  str_table+="<td>"+data[i].isbn+"</td>";
+				  str_table+="<td>"+data[i].isCoverAvailable+"</td>";
+				  str_table+="</tr>";
+
+				}
+				
+				//alert(str_table);
+				$('#populate_table').html(str_table);
+
+			}
+	});
+
+
+$('#searchbtn').click(function(){
+var url="http://localhost:3000/api/books/getBook/"+$('#search').val();
+
+$.ajax({
+		url:url,
+		type:'GET',
+		headers:{
+				"x-access-token":token_value
+			},
+		success:function(data, status){
+				//alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+				var str_table='';
+				for(var i=0 ;i < data.length ; i++){
+
+				  str_table+="<tr>";
+				  str_table+="<td>"+data[i].title+"</td>";
+				  str_table+="<td>"+data[i].author+"</td>";
+				  str_table+="<td>"+data[i].link+"</td>";
+				  str_table+="<td>"+data[i].imageLink+"</td>";
+				  str_table+="<td>"+data[i].genre+"</td>";
+				  str_table+="<td>"+data[i].isbn+"</td>";
+				  str_table+="<td>"+data[i].isCoverAvailable+"</td>";
+				  str_table+="</tr>";
+
+				}
+				
+				//alert(str_table);
+				$('#populate_table').html(str_table);
+			}
+				
+	});
+
+});
+
+});
+</script>
+
+</body>
+</html>

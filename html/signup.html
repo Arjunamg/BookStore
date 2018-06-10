@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container col-sm-6 col-md-6" style="position:absolute;top:30%;left:24%;">
+  
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">login</div>
+    <div class="panel-body">
+      <div class="form-group">
+    		<label for="username">Name:</label>
+    		<input type = "text" id="name" class="form-control" name = "name">
+  	</div>
+	  
+	  
+   	<div class="form-group">
+    		<label for="username">Email:</label>
+    		<input type = "text" id="email" class="form-control" name = "email">
+  	</div>
+  	<div class="form-group">
+    		<label for="pwd">Password:</label>
+    		<input type = "password" id="passowrd" class="form-control" name = "password">
+  	</div>
+	
+	<div class="form-group">
+    		<label for="username">Role:</label>
+    		<input type = "text" id="role" class="form-control" name = "role" placeholder="Can be user or editor">
+  	</div>
+	
+   	<button  class="btn btn-danger"  id="signup">Submit</button>
+     
+   </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+
+$('#signup').click(function(){
+$.post("http://localhost:3000/api/auth/register",{ name: $('#name').val(),email: $('#email').val(), role: $('#role').val(),password: $('#passowrd').val() }, function(data, status){
+        //alert(data);
+		console.log("success");
+		window.location.href = 'login.html';
+		//localStorage.setItem("token", data.token);
+    });
+});
+});
+
+</script>
+
+</body>
+</html>

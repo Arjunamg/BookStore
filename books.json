@@ -1,0 +1,79 @@
+[
+    {
+        "_id": "5b1ad33f83b77a0a58727065",
+        "isbn": "1ygy22",
+        "title": "Things Fall Apart",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\\n",
+        "author": "amit",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad3d783b77a0a58727066",
+        "isbn": "1ygy89",
+        "title": "Fairy tales",
+       "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\\n",
+        "author": "manish",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad4a783b77a0a58727067",
+        "isbn": "1ygy67",
+        "title": "The Divine",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/Divine_Comedy\\n",
+        "author": "chetan",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad4f383b77a0a58727068",
+        "isbn": "1ygy27",
+        "title": "The Epic Of Gilgamesh",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\\n",
+        "author": "ranbir",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad53c83b77a0a58727069",
+        "isbn": "1ygy91",
+        "title": "The Book Of Job",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/Book_of_Job\\n",
+        "author": "sanjay",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad57683b77a0a5872706a",
+        "isbn": "1ygy34",
+        "title": "One Thousand and One Nights",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\\n",
+        "author": "raju",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    },
+    {
+        "_id": "5b1ad5b783b77a0a5872706b",
+        "isbn": "1ygy30",
+        "title": "Harry met shehjal",
+        "genre": "crime",
+		"imageLink": "images/things-fall-apart.jpg",
+        "link": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\\n",
+        "author": "farhan",
+		"isCoverAvailable":"yes",
+        "__v": 0
+    }
+]
